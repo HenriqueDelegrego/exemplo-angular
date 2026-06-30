@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MeuComponente } from './meu-componente/meu-componente';
-import { Valores } from "./valores/valores";
 import { Introducao } from "./introducao/introducao";
+import { EnderecoComponent } from "./endereco-component/endereco-component";
+import { PessoaComponent } from "./pessoa-component/pessoa-component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MeuComponente, Valores, Introducao],
+  imports: [RouterOutlet, MeuComponente, Introducao, EnderecoComponent, PessoaComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
