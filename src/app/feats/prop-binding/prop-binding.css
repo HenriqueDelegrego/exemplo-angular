@@ -1,0 +1,8 @@
+.habilitado {
+    border: 3px solid green;
+}
+
+.nao-habilitado {
+        border: 3px solid red;
+
+}
