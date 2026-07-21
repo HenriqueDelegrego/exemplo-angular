@@ -8,13 +8,22 @@ import { Component } from '@angular/core';
 })
 export class Contador {
 
-  contador: number = 0;
+  protected contador: number = 0;
 
-  incrementarValor() {
+  private limiteImposto = 10;
+
+  protected incrementarValor() {
     this.contador++;
+    this.checarValor();
   }
 
-  redefinirValor() {
+  private checarValor() {
+    if (this.contador > this.limiteImposto) {
+      this.contador = 0;
+    }
+  }
+
+  protected redefinirValor() {
     this.contador = 0;
   }
 

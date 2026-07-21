@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Autenticacao {
 
-  logado = false;
+  protected logado = false;
 
-  alterarEstado() {
+  protected alterarEstado() {
     this.logado = !this.logado;
   }
 
