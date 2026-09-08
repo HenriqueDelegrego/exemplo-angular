@@ -1,5 +1,5 @@
 import { HttpClient, httpResource } from '@angular/common/http';
-import { inject, Service } from '@angular/core';
+import { inject, Service, signal } from '@angular/core';
 import { Post } from './post-request/post';
 import { AtualizaPost } from './put-request/atualiza-post';
 import { PostResponse } from './post-request/post-response';
@@ -25,8 +25,16 @@ export class ConsumoHttpService {
         return this.httpClient.delete(this.urlApi + '/' + id);
     }
 
+    userId = signal<string>('');
+
     readonly postsDetails = httpResource<PostListResponse[]>(
-        () => this.urlApi,
+        () => {
+            const pesquisa = this.userId();
+            return {
+                url: this.urlApi,
+                params: pesquisa ? { userId: pesquisa } : undefined
+            }
+        },
         { defaultValue: [] }
     )
 

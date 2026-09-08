@@ -1,13 +1,19 @@
+<form (submit)="filtrarPosts($event)">
+    <input type="text" [formField]="pesquisaForm">
+    <button>Filtrar posts</button>
+</form>
+
 <button (click)="recarregarPosts()">Recarregar</button>
 
 @if (consumoService.postsDetails.isLoading()) {
-    <p>Carregando...</p>
+<p>Carregando...</p>
 } @else if(consumoService.postsDetails.error()) {
-    <p>Deu erro</p>
+<p>Deu erro</p>
 }
 @else if(consumoService.postsDetails.hasValue()) {
-    @for (post of consumoService.postsDetails.value(); track post.id) {
-        <h1>{{post.title}}</h1>
-        <p>{{post.body}}</p>
-    }
+@for (post of consumoService.postsDetails.value(); track post.id) {
+<h1>User id: {{post.userId}}</h1>
+<h1>{{post.title}}</h1>
+<p>{{post.body}}</p>
+}
 }
