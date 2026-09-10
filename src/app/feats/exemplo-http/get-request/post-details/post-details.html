@@ -1,0 +1,9 @@
+@if (post.isLoading()) {
+    <p>Carregando...</p>
+} @else if (post.error()) {
+    <p>Deu erro</p>
+} @else if (post.hasValue()) {
+    <h1>User id: {{ post.value().userId }}</h1>
+    <h1>{{ post.value().title }}</h1>
+    <p>{{ post.value().body }}</p>
+}

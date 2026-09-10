@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { ConsumoHttpService } from '../consumo-http-service';
 import { form, FormField } from '@angular/forms/signals';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-get-request',
-  imports: [FormField],
+  imports: [FormField, RouterLink],
   templateUrl: './get-request.html',
   styleUrl: './get-request.css',
 })

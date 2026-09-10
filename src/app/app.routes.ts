@@ -9,6 +9,7 @@ import { AlunosFavoritos } from './feats/alunos-favoritos/alunos-favoritos';
 import { Exercicios } from './feats/exercicios/exercicios';
 import { ExemploForm } from './feats/exemplo-form/exemplo-form';
 import { ExemploHttp } from './feats/exemplo-http/exemplo-http';
+import { PostDetails } from './feats/exemplo-http/get-request/post-details/post-details';
 
 export const routes: Routes = [
 
@@ -22,6 +23,7 @@ export const routes: Routes = [
     { path: 'exercicios', component: Exercicios },
     { path: 'form', component: ExemploForm },
     { path: 'http', component: ExemploHttp },
+    { path: 'posts/:id', component: PostDetails },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 ];
